@@ -1,0 +1,204 @@
+<html lang="en">
+<style>
+    .api-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.api-card {
+  flex: 1 1 250px;
+  max-width: 320px;
+  background: rgba(18, 18, 30, 0.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1.25rem;
+  color: #f4f4f6;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.api-card h3 {
+  margin-top: 0;
+  color: #d4ebf8; /* Soft ice blue */
+  font-size: 1.2rem;
+}
+
+.api-card p {
+  min-height: 48px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.api-card .punchline {
+  color: #ffe082; /* Warm amber highlight */
+  font-weight: bold;
+}
+
+.api-card button {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.api-card button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+    body {
+        font-family: Garamond, serif;
+        margin: 20px;
+        background-image: url('https://plus.unsplash.com/premium_photo-1666232903265-ba0419aa3ef7?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    }
+    h1, h2 {
+        color: #D4EBF8;
+    }
+    p {
+        line-height: 1.6;
+        color: #D4EBF8;
+    }
+
+    li {
+        margin-bottom: 10px;
+        color: #D4EBF8; 
+    }
+
+    ul {
+  list-style-position: inside;
+  padding: 15px 20px;
+}
+
+    li::marker {
+    color: black;
+}
+    
+
+    .nameborder {
+        text-align: center;
+        border: 2px solid black;
+        background-image: url('https://img.magnific.com/free-vector/discover-cosmic-beauty-with-night-space-view-banner-design_1017-43476.jpg?semt=ais_hybrid&w=740&q=80');
+        background-size: cover;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .projectsborder {
+        border: 2px solid black;
+        background-color: #f0f0f0;
+        background-size: cover;
+        padding: 10px;
+        margin-bottom: 20px;
+        width: fit-content;
+        border-radius: 10px;
+    }
+    a:link {
+  color: rgb(87, 184, 87);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:link {
+  color: rgb(87, 184, 87);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(87, 184, 87);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(87, 184, 87);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: rgb(87, 184, 87);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title color="white">Vasilis Nefrem</title>
+    <h1 class="nameborder"> Vasilis Nefrem </h1>   
+    <p style="text-align: left;">Hey I'm Vasilis Nefrem and welcome to my cool website! I love to code and build cool stuff!</p>
+    
+</head>
+<body> <h2>About Me</h2>
+    <p style="text-align: left;">I am a passionate Computer Science student with a love for creating innovative solutions. I enjoy learning new technologies and applying them to real-world projects.</p>
+    
+    <h2>My Projects</h2>
+    <ul class="projectsborder">
+        <li><a href="https://github.com/vasilakos1821/John-Pork-SlackBot    ">Project 1: A simple funny slack bot</a></li>
+        <li><a href="https://www.rentaboatkavala.com/">Project 2: A Boat Rental Website</a></li>
+        <li style="color: green;">Project 3: Coming Soon...</li>
+    </ul>
+
+    <h2>Contact Me</h2>
+    <p style="text-align: left;">Feel free to reach out to me via email at <a href="mailto:vasilisnefrem@gmail.com">vasilisnefrem@gmail.com</a></p>
+
+    <h1 class="nameborder">FUN API STUFF BELOW</h1>
+    <!-- API CARDS SECTION -->
+  <section class="api-grid">
+    <!-- Card 1: ISS Location -->
+    <div class="api-card">
+      <h3>Where is the ISS?</h3>
+      <p id="iss-status">Locating station...</p>
+      <button onclick="fetchISS()">Refresh Location</button>
+    </div>
+
+<!-- Card 2: Weather by City Input -->
+<div class="api-card">
+  <h3>City Weather</h3>
+  <div style="display: flex; gap: 6px; margin-bottom: 10px;">
+    <input 
+      type="text" 
+      id="city-input" 
+      placeholder="Enter city (e.g. Kavala)" 
+      style="flex: 1; padding: 6px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.4); color: #fff;"
+      onkeydown="if(event.key === 'Enter') fetchWeatherByCity()"
+    />
+    <button onclick="fetchWeatherByCity()">Check</button>
+  </div>
+  <p id="weather-status">Type a city and press Check</p>
+</div>
+
+    <!-- Card 3: Joke Generator -->
+    <div class="api-card">
+      <h3>Random Joke</h3>
+      <p id="joke-setup">Fetching joke...</p>
+      <p id="joke-punchline" class="punchline"></p>
+      <button onclick="fetchJoke()">Get New Joke</button>
+    </div>
+
+    <!-- Card 4: Random Cat Picture -->
+<div class="api-card" style="text-align: center;">
+  <h3>Cosmic Kitty</h3>
+  <div style="width: 100%; height: 160px; margin: 10px 0; border-radius: 8px; overflow: hidden; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;">
+    <img 
+      id="cat-img" 
+      src="" 
+      alt="Random Cat" 
+      style="width: 100%; height: 100%; object-fit: cover; display: none;" 
+      onload="this.style.display='block'; document.getElementById('cat-loading').style.display='none';"
+    />
+    <span id="cat-loading" style="color: #ccc; font-size: 0.9rem;">Summoning cat...</span>
+  </div>
+  <button onclick="fetchCat()">New Cat</button>
+</div>
+
+  <!-- Connect your external JavaScript file here -->
+  <script src="script.js"></script>
+</body>
+</html>
