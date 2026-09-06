@@ -1,6 +1,6 @@
 # Nefrem's Website
 Hello and welcome to my very own website!
-This website is just a simple static page about me with some of my projects and a cool API section in the end for fun!
+This website is just a simple static page about me and some of my projects with some APIs in the end for now but it's definitely gonna get updated to be more interactive and professional.
 <img width="1900" height="862" alt="image" src="https://github.com/user-attachments/assets/1a01c2f8-9de6-48ac-8e40-b94880f72391" />
 
 
